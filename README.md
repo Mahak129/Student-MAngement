@@ -221,3 +221,173 @@ public class Program()
 }
 
 
+21August2024
+
+
+
+
+
+using System;
+using System.Diagnostics;
+using System.Globalization;
+using System.Xml.Linq;
+
+public partial class Student
+{
+
+    int studentID;
+    string name;
+    int age;
+    int[] arr = new int[3];
+    public void AddStudent()
+    {
+        Console.WriteLine("Write Student ID");
+        studentID = int.Parse(Console.ReadLine());
+        Console.WriteLine("Write Student name");
+        name = Console.ReadLine();
+        Console.WriteLine("Enter student age");
+        age = int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter score of subject Maths,English,Hindi");
+        for(int i = 0; i < arr.Length; i++)
+        {
+            arr[i] = int.Parse(Console.ReadLine());
+        }
+
+       Console.WriteLine(" score of subject Maths,English,Hindi");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.WriteLine(arr[i]);
+        }
+    }
+
+
+  
+    
+    public void DisplayStudentInfo(List<Student> std)
+    {
+
+        Console.WriteLine("List of students:");
+        foreach (var student in std)
+        {
+            Console.WriteLine($"Name = {student.name}, Age = {student.age}, StudentID = {student.studentID}");
+        }
+    }
+    public void calAvg()
+    {
+        Console.WriteLine(" average of subject Maths,English,Hindi");
+        int total = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            total += arr[i];
+        }
+        Console.WriteLine(" average = "+total/3f);
+    }
+    public void SearchByID(List<Student> std)
+    {
+        Console.WriteLine("Enter Student ID to Search");
+        int id = int.Parse(Console.ReadLine());   
+        //Console.Write(std.Contains(id)); //not working
+    }
+    public void getSortedList(List<Student> std)
+    {
+        std.Sort();
+        foreach(var sorted in std)
+        {
+            Console.WriteLine(sorted);
+        }
+    }
+    public void AnalyseStudent(List<Student> std)
+    {
+        //total no of student
+        Console.WriteLine("Total no of Student are: "+ std.Count);
+
+        //longest shortest name
+
+
+        //most common starting letter of names
+
+
+    }
+    public void removeStudent(List<Student> std)
+    {
+
+    }
+
+}
+
+public class program
+{
+    public static void Main(String[] args)
+    {
+        List<Student> std= new List<Student>();
+        Student obj1 = new Student();
+
+        try
+        {
+            int command;
+            do
+            {
+                Console.WriteLine("*************************Student Manangement Console Application*****************");
+                Console.WriteLine("Select option");
+                Console.WriteLine("1 Add Student");
+                Console.WriteLine("2 Display Student Information");
+                Console.WriteLine("3 Search by ID");
+                Console.WriteLine("4 Get sorted student List");
+                Console.WriteLine("5 Analyze Student");
+                Console.WriteLine("6 Remove Student");
+                Console.WriteLine("7 Exit");
+
+                command = int.Parse(Console.ReadLine());
+
+                switch (command)
+                {
+                    case 1:
+                        Console.WriteLine("Add Student Interface");
+                       
+                      
+                        obj1.AddStudent();
+                        std.Add(obj1);
+
+                        Console.WriteLine("Student added successfully.\n");
+
+                        break;
+
+                    case 2:
+                        Console.WriteLine("DisplayStudentInfo Interface");
+                        obj1.DisplayStudentInfo(std);
+
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Search student by ID Interface");
+                        obj1.SearchByID(std);
+                        break;
+
+                    case 4:
+                        Console.WriteLine("Get Sorted List ");
+                        obj1.getSortedList(std);
+                        break;
+                    case 5:
+                        Console.WriteLine("Anaylse Student");
+                        obj1.AnalyseStudent(std);
+                        break;
+                    case 6:
+                        Console.WriteLine("Remove Student");
+                        obj1.removeStudent(std);
+                        break;
+                    case 7:
+                        Console.WriteLine("Exit");
+                        
+                        break;
+                }
+            } while (command != 6);
+
+
+        }
+        catch
+        {
+
+        }
+
+    }
+}
