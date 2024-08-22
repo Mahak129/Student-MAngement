@@ -502,3 +502,67 @@ List all products along with their categories and the number of orders they have
 Retrieve the full order details including customer information and the products ordered. 
 
 Find customers who have purchased a product priced over $100, and include their contact details. 
+
+
+
+
+
+
+
+
+
+
+
+
+22 August
+
+
+Assignment: Database Management and Optimization 
+
+Scenario 
+
+Design and implement a database for managing core banking operations, including customer management, account management, transactions, and loan management using Microsoft SQL Server. 
+
+Task 1: Design a database schema  
+
+The requirements are mentioned below: 
+
+Ensure unique identification of each record in all tables. 
+
+Enforce referential integrity between related tables (e.g., CustomerID in Accounts table references CustomerID in Customers table). 
+
+Enforce uniqueness of certain fields, such as Email in the Customers table and AccountNumber in the Accounts table. 
+
+Ensure valid data entry according to business rules (e.g., AccountType must be either 'Savings', 'Checking', or 'Loan'). 
+
+Task 2: Triggers 
+
+Trigger to log the creation of a new account. 
+
+Trigger to prevent withdrawals that would result in a negative balance. 
+
+Task 3: Functions 
+
+Function to calculate interest on a savings account based on the balance and interest rate. 
+
+Task 4: Stored Procedure 
+
+Procedure to create a new account for a customer. 
+
+Procedure to record a deposit, withdrawal, or transfer for an account. 
+
+Procedure to apply a payment towards an existing loan. 
+
+ 
+
+ 
+
+  
+
+ 
+
+Deadline: Deliver this by 23rd Aug, 12:30 pm 
+
+ 
+
+ 
